@@ -4,7 +4,7 @@ from Encoder import Encoder
 
 class Node():
 
-    def __init__(self, id=None):
+    def __init__(self, id=None, boot=False):
         self.encoder = Encoder()
         self.id = id or self.__generate_random_id()
 

@@ -5,6 +5,36 @@ from src.Search_result import SearchResult
 from src.Peer_search import Peer_search
 from src.Node import Node
 from src.Encoder import Encoder
+from src.IP_Parser import IP_Parser
+from Exceptions.Invalid_IP_exception import Invalid_IP_exception
+
+class Test_IP_Parser_parse_method_valid_inputs(unittest.TestCase):
+
+    def setUp(self):
+        self.parser = IP_Parser()
+
+    def test_valid_ip_addr(self):
+        str = "127.2.2.1:1234"
+        ip = self.parser.parse(str)
+        self.assertEqual(ip.ip, "127.2.2.1", "Did not parse valid ip correctly")
+        self.assertEqual(ip.port, 1234, "Did not parse valid port correctly")
+
+class Test_IP_Parser_parse_method_edge_cases(unittest.TestCase):
+
+    def setUp(self):
+        self.parser = IP_Parser()
+
+    def test_invalid_ip_addr(self):
+        str = "127.2.1:1234"
+        try:
+            ip = self.parser.parse(str)
+        except Invalid_IP_exception:
+            return
+        self.fail("Did not recognise invalid IP")
+
+    def test_invalid_port(self):
+        str = "127.2.1.1:"
+        ip = self.parser.parse(str)
 
 class Test_encoder_generate_random_id(unittest.TestCase):
 
