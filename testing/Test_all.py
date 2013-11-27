@@ -12,7 +12,7 @@ from Global.Global_consts import Global_consts
 class Test_start_node_as_boot(unittest.TestCase):
 
     def setUp(self):
-        self.node = Node(boot=True)
+        self.node = Node()
 
     def test_default_ip_set_up(self):
         self.assertEqual(self.node.IP.ip, Global_consts.default_ip, "Default ip not set")
@@ -75,7 +75,6 @@ class Test_Node_default_attributes(unittest.TestCase):
 
     def test_check_id_generated(self):
         self.assertTrue(self.node.id)
-        self.assertFalse(self.node.boot)
 
     def test_default_ip_for_node(self):
         self.assertEqual(self.node.IP.ip, Global_consts.default_ip, "Default ip not set")
@@ -85,11 +84,10 @@ class Test_Node_attributes_passed_and_set(unittest.TestCase):
 
     def setUp(self):
         self.test_id = 12345
-        self.node = Node(id=self.test_id, boot=True)
+        self.node = Node(id=self.test_id)
 
     def test_check_id_generated(self):
         self.assertTrue(self.node.id == self.test_id)
-        self.assertTrue(self.node.boot)
 
 class Test_search_result_conforms_to_interface(unittest.TestCase):
 
