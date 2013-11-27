@@ -1,3 +1,5 @@
+from src.networking import IP_Parser
+
 __author__ = 'mike'
 
 import unittest
@@ -5,7 +7,7 @@ from src.Search_result import SearchResult
 from src.Peer_search import Peer_search
 from src.Node import Node
 from src.Encoder import Encoder
-from src.IP_Parser import IP_Parser
+from src.networking.IP_Parser import IP_Parser
 from Exceptions.Invalid_IP_exception import Invalid_IP_exception
 from Global.Global_consts import Global_consts
 

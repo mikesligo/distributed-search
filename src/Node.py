@@ -1,8 +1,10 @@
+from src.networking import IP_Parser
+
 __author__ = 'mike'
 
 from Encoder import Encoder
 from networking.Listener import Listener
-from IP_Parser import IP_Parser
+from networking.IP_Parser import IP_Parser
 
 class Node():
 
