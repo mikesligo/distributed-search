@@ -4,8 +4,8 @@ from Node import Node
 
 def main():
     parser = Parser()
-    args = parser.parse_args()
-    node = Node(args.id)
+    args = parser.get_parsed_args()
+    node = Node(id=args.id, boot=args.boot)
 
 if __name__=='__main__':
     main()

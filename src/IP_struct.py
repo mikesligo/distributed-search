@@ -16,7 +16,7 @@ class IP():
         self.ip = ip
 
     def set_port(self, port):
-        if port is None or "":
+        if not port:
             raise Invalid_IP_exception("Attempted to parse empty string as port")
         self.port = int(port)
 

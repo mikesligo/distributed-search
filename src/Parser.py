@@ -1,7 +1,7 @@
 __author__ = 'mike'
 
 import argparse
-import Args
+from Args import Args
 
 class Parser():
 
