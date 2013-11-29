@@ -1,13 +1,11 @@
 __author__ = 'mike'
-from Parser import Parser
-from Node import Node
+
+from Peer_search import Peer_search
+from networking.Network_utils import Network_utils
 
 def main():
-    parser = Parser()
-    args = parser.get_parsed_args()
-    node = Node(id=args.id)
-    if args.boot:
-        node.start_network()
+    peer_search = Peer_search()
+    peer_search.init(Network_utils.get_default_udp_socket())
 
 if __name__=='__main__':
     main()

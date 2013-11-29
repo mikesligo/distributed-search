@@ -1,27 +1,46 @@
-from src.networking import IP_Parser
-
-__author__ = 'mike'
-
 import unittest
+
+import threading
+
 from src.Search_result import SearchResult
 from src.Peer_search import Peer_search
 from src.Node import Node
 from src.Encoder import Encoder
 from src.networking.IP_Parser import IP_Parser
+from src.networking.Listener import Listener
+from src.networking.Network_utils import Network_utils
 from Exceptions.Invalid_IP_exception import Invalid_IP_exception
+from Exceptions.TimeoutError import TimeoutError
 from Global.Global_consts import Global_consts
+
+class Test_listener_works_as_echo_server(unittest.TestCase):
+
+    def setUp(self):
+        self.socket = Network_utils.get_default_udp_socket()
+        self.client_sock = Network_utils.get_test_udp_socket()
+        self.listener = Listener(self.socket)
+
+    def test_listener_echo_server(self):
+        listen_thread = threading.Thread(target=self.listener.echo(), args=())
+        send_data = "ping"
+        self.client_sock.sendto(send_data)
+        data, server = self.client_sock.recvfrom(4096)
+        self.assertEqual(send_data, data)
+
+    def tearDown(self):
+        self.socket.close()
+        self.client_sock.close()
 
 class Test_start_node_as_boot(unittest.TestCase):
 
     def setUp(self):
         self.node = Node()
 
-    def test_default_ip_set_up(self):
-        self.assertEqual(self.node.IP.ip, Global_consts.default_ip, "Default ip not set")
-        self.assertEqual(self.node.IP.port, Global_consts.default_port, "Default port not set")
-
     def test_node_accepting_connections(self):
         pass
+
+    def tearDown(self):
+        self.node.socket.close()
 
 class Test_IP_Parser_parse_method_valid_inputs(unittest.TestCase):
 
@@ -77,10 +96,10 @@ class Test_Node_default_attributes(unittest.TestCase):
 
     def test_check_id_generated(self):
         self.assertTrue(self.node.id)
+        self.assertTrue(self.node.socket)
 
-    def test_default_ip_for_node(self):
-        self.assertEqual(self.node.IP.ip, Global_consts.default_ip, "Default ip not set")
-        self.assertEqual(self.node.IP.port, Global_consts.default_port, "Default port not set")
+    def tearDown(self):
+        self.node.socket.close()
 
 class Test_Node_attributes_passed_and_set(unittest.TestCase):
 
@@ -90,6 +109,9 @@ class Test_Node_attributes_passed_and_set(unittest.TestCase):
 
     def test_check_id_generated(self):
         self.assertTrue(self.node.id == self.test_id)
+
+    def tearDown(self):
+        self.node.socket.close()
 
 class Test_search_result_conforms_to_interface(unittest.TestCase):
 

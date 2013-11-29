@@ -1,12 +1,20 @@
 __author__ = 'mike'
 
+from Parser import Parser
+from Node import Node
+
 class Peer_search():
 
     def __init__(self):
-        pass
+        self.node = None
+        self.socket = None
 
     def init(self, udp_socket):
-        pass
+        parser = Parser()
+        args = parser.get_parsed_args()
+        self.node = Node(udp_socket, id=args.id)
+        if args.boot:
+            self.node.start_network()
 
     def join_network(self, bootstrap_node_ip_addr):
         pass
