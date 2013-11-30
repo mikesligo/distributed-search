@@ -4,6 +4,12 @@ import socket
 class Network_utils():
 
     @staticmethod
+    def get_udp_socket(host, port):
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.bind((host,port))
+        return s
+
+    @staticmethod
     def get_default_udp_socket():
         host = Global_consts.default_ip
         port = Global_consts.default_port

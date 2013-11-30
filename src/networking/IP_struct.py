@@ -10,3 +10,6 @@ class IP():
 
     def __str__(self):
         return str(self.ip) + ":" + str(self.port)
+
+    def get_ip_pair(self):
+        return (self.ip, int(self.port))

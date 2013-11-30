@@ -14,3 +14,11 @@ class Send_formatter(object):
         message["table"] = self.table.get_routing_table_json()
         jsoned_msg = json.dumps(message)
         return jsoned_msg
+
+    def send_joining_network(self):
+        message = {}
+        message["type"] = "ROUTING_INFO"
+        message["node_id"] = self.table.node_id
+        message["ip_address"] = str(self.table.node_ip)
+        jsoned_msg = json.dumps(message)
+        return jsoned_msg
