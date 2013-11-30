@@ -6,12 +6,11 @@ class Listener():
     def __init__(self, socket, table):
         self.socket = socket
         self.table = table
-        self.ip_parser = IP_Parser()
+        self.message_handler = Message_handler(self.table, self.socket)
 
     def listen(self):
         print "Listening..."
         while True:
             recv_data, addr = self.socket.recvfrom(2048)
             print "Received data..."
-            handler = Message_handler(self.table, addr)
-            handler.handle(recv_data)
+            self.message_handler.handle(recv_data, addr)
