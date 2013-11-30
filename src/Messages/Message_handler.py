@@ -1,5 +1,5 @@
 import json
-from Message_sender import Mesaage_sender
+from Send_formatter import Send_formatter
 from src.networking.IP_Parser import IP_Parser
 
 class Message_handler(object):
@@ -8,7 +8,7 @@ class Message_handler(object):
         self.parser = IP_Parser()
         self.table = table
         self.sender_addr = self.parser.parse_from_tuple(addr)
-        self.send_handler = Mesaage_sender(self.table)
+        self.send_formatter = Send_formatter(self.table)
 
     def handle(self, data):
         message = json.loads(data)
@@ -23,6 +23,6 @@ class Message_handler(object):
         print "Received message - JOINING_NETWORK"
         self.table.add_routing_info(message["node_id"], message["ip_address"])
         self.table.add_routing_info(23, message["ip_address"])
-        self.send_handler.send_routing_info(message["node_id"])
+        to_send = self.send_formatter.send_routing_info(message["node_id"])
         # reply with routing_info
         # possibly forward joinig_network_relay to node with numerically closer id

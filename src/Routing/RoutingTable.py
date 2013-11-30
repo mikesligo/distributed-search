@@ -8,5 +8,5 @@ class RoutingTable(object):
     def add_routing_info(self, id, ip):
         self.__table[id] = ip
 
-    def get_routing_table(self):
-        return self.__table
+    def get_routing_table_json(self):
+        return [{entry:str(self.__table[entry])} for entry in self.__table.keys()]

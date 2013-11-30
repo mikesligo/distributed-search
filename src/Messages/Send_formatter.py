@@ -1,6 +1,6 @@
 import json
 
-class Mesaage_sender(object):
+class Send_formatter(object):
 
     def __init__(self, table):
         self.table = table
@@ -10,7 +10,7 @@ class Mesaage_sender(object):
         message["type"] = "ROUTING_INFO"
         message["gateway_id"] = self.table.node_id
         message["node_id"] = node_id
-        message["ip_address"] = self.table.node_ip
-        message["table"] = self.table.get_routing_table()
+        message["ip_address"] = str(self.table.node_ip)
+        message["table"] = self.table.get_routing_table_json()
         jsoned_msg = json.dumps(message)
-        pass
+        return jsoned_msg
