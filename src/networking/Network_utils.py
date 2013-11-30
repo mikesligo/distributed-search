@@ -20,3 +20,7 @@ class Network_utils():
         s.settimeout(3.0)
         s.bind((host,port))
         return s
+
+    @staticmethod
+    def get_default_server_addr():
+        return (Global_consts.default_ip, Global_consts.default_port)

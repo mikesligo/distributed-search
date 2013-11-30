@@ -1,6 +1,7 @@
 import unittest
+import logging
 
-import threading
+from multiprocessing import Process
 
 from src.Search_result import SearchResult
 from src.Peer_search import Peer_search
@@ -10,7 +11,6 @@ from src.networking.IP_Parser import IP_Parser
 from src.networking.Listener import Listener
 from src.networking.Network_utils import Network_utils
 from Exceptions.Invalid_IP_exception import Invalid_IP_exception
-from Exceptions.TimeoutError import TimeoutError
 from Global.Global_consts import Global_consts
 
 class Test_listener_works_as_echo_server(unittest.TestCase):
@@ -19,13 +19,20 @@ class Test_listener_works_as_echo_server(unittest.TestCase):
         self.socket = Network_utils.get_default_udp_socket()
         self.client_sock = Network_utils.get_test_udp_socket()
         self.listener = Listener(self.socket)
+        self.send_data = "ping"
+
+    def send_echo(self):
+        while True:
+            self.client_sock.sendto(self.send_data, Network_utils.get_default_server_addr())
+            data, server = self.client_sock.recvfrom(4096)
+            print data
+        self.assertEqual(self.send_data, data)
 
     def test_listener_echo_server(self):
-        listen_thread = threading.Thread(target=self.listener.echo(), args=())
-        send_data = "ping"
-        self.client_sock.sendto(send_data)
-        data, server = self.client_sock.recvfrom(4096)
-        self.assertEqual(send_data, data)
+        listen_thread = Process(target=self.listener.echo, args=())
+        send_echo = Process(target=self.send_echo, args=())
+        listen_thread.start()
+        send_echo.start()
 
     def tearDown(self):
         self.socket.close()
