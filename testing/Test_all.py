@@ -13,41 +13,6 @@ from src.networking.Network_utils import Network_utils
 from Exceptions.Invalid_IP_exception import Invalid_IP_exception
 from Global.Global_consts import Global_consts
 
-class Test_listener_works_as_echo_server(unittest.TestCase):
-
-    def setUp(self):
-        self.socket = Network_utils.get_default_udp_socket()
-        self.client_sock = Network_utils.get_test_udp_socket()
-        self.listener = Listener(self.socket)
-        self.send_data = "ping"
-
-    def send_echo(self):
-        while True:
-            self.client_sock.sendto(self.send_data, Network_utils.get_default_server_addr())
-            data, server = self.client_sock.recvfrom(4096)
-            print data
-        self.assertEqual(self.send_data, data)
-
-    def test_listener_echo_server(self):
-        listen_thread = Process(target=self.listener.echo, args=())
-        send_echo = Process(target=self.send_echo, args=())
-        listen_thread.start()
-        send_echo.start()
-
-    def tearDown(self):
-        self.socket.close()
-        self.client_sock.close()
-
-class Test_start_node_as_boot(unittest.TestCase):
-
-    def setUp(self):
-        self.node = Node()
-
-    def test_node_accepting_connections(self):
-        pass
-
-    def tearDown(self):
-        self.node.socket.close()
 
 class Test_IP_Parser_parse_method_valid_inputs(unittest.TestCase):
 

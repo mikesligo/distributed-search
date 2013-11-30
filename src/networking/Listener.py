@@ -1,17 +1,17 @@
-import logging
+from src.Messages.Message_handler import Message_handler
+from src.networking.IP_Parser import IP_Parser
 
 class Listener():
 
-    def __init__(self, socket):
+    def __init__(self, socket, table):
         self.socket = socket
+        self.table = table
+        self.ip_parser = IP_Parser()
 
     def listen(self):
-        logging.info("Listening...")
+        print "Listening..."
         while True:
             recv_data, addr = self.socket.recvfrom(2048)
-            print recv_data
-
-    def echo(self):
-        logging.info("Echoing...")
-        recv_data, addr = self.socket.recvfrom(2048)
-        self.socket.sendto(recv_data, addr)
+            print "Received data..."
+            handler = Message_handler(self.table, self.ip_parser.parse())
+            handler.handle(recv_data)

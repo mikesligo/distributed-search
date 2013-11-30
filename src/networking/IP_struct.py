@@ -4,9 +4,9 @@ from Exceptions.Invalid_IP_exception import Invalid_IP_exception
 
 class IP():
 
-    def __init__(self):
-        self.ip = None
-        self.port = None
+    def __init__(self, ip=None, port=None):
+        self.ip = ip
+        self.port = port
 
     def set_ip(self, ip):
         if not len(ip.split(".")) == 4:
@@ -19,4 +19,3 @@ class IP():
         if not port:
             raise Invalid_IP_exception("Attempted to parse empty string as port")
         self.port = int(port)
-
