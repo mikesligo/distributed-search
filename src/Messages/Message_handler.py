@@ -22,7 +22,6 @@ class Message_handler(object):
 
     def join_network(self, bootstrap_ip):
         to_send = self.send_formatter.send_joining_network()
-        ip = bootstrap_ip.get_ip_pair()
         self.socket.sendto(to_send, bootstrap_ip.get_ip_pair())
 
     def handle_joining_network(self, message, sender_addr):

@@ -17,7 +17,7 @@ class Send_formatter(object):
 
     def send_joining_network(self):
         message = {}
-        message["type"] = "ROUTING_INFO"
+        message["type"] = "JOINING_NETWORK"
         message["node_id"] = self.table.node_id
         message["ip_address"] = str(self.table.node_ip)
         jsoned_msg = json.dumps(message)
