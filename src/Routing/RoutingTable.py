@@ -1,4 +1,3 @@
-
 class RoutingTable(object):
 
     def __init__(self, node_id, node_ip):
@@ -8,3 +7,6 @@ class RoutingTable(object):
 
     def add_routing_info(self, id, ip):
         self.__table[id] = ip
+
+    def get_routing_table(self):
+        return self.__table

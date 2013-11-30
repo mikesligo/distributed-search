@@ -5,7 +5,7 @@ def send_joining_network():
     data = '''{
     "type": "JOINING_NETWORK",
     "node_id": "42",
-    "ip_address": "199.1.5.2"
+    "ip_address": "199.1.5.2:3434"
 }'''
     socket.sendto(data, Network_utils.get_default_server_addr())
 

@@ -13,5 +13,5 @@ class Listener():
         while True:
             recv_data, addr = self.socket.recvfrom(2048)
             print "Received data..."
-            handler = Message_handler(self.table, self.ip_parser.parse())
+            handler = Message_handler(self.table, addr)
             handler.handle(recv_data)
