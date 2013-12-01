@@ -20,14 +20,14 @@ class Message_handler(object):
         if type == "JOINING_NETWORK":
             self.handle_joining_network(message, sender_addr)
         if type =="ROUTING_INFO":
-            self.handle_routing_info()
+            self.handle_routing_info(message, sender_addr)
 
     def join_network(self, bootstrap_ip):
         to_send = self.send_formatter.send_joining_network()
         self.socket.sendto(to_send, bootstrap_ip.get_ip_pair())
 
-    def handle_routing_info(self):
-        pass
+    def handle_routing_info(self, message, sender_addr):
+        self.table.load_routing_info(message["route_table"])
 
     def handle_joining_network(self, message, sender_addr):
         print "Received message - JOINING_NETWORK"

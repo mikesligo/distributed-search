@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="47209205-265a-4041-ab71-24e71018ff20" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Messages/Message_handler.py" afterPath="$PROJECT_DIR$/src/Messages/Message_handler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/networking/Network_utils.py" afterPath="$PROJECT_DIR$/src/networking/Network_utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Routing/RoutingTable.py" afterPath="$PROJECT_DIR$/src/Routing/RoutingTable.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Messages/Send_formatter.py" afterPath="$PROJECT_DIR$/src/Messages/Send_formatter.py" />
     </list>
     <ignored path="distributed-search.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,19 +31,10 @@
       <file leaf-file-name="Node.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Node.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="1132" selection-end="1132" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="600">
+            <state line="32" column="0" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.0" vertical-offset="74" max-vertical-offset="600">
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IP_struct.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/networking/IP_struct.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="38" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -66,10 +57,32 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Peer_search.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Peer_search.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+              <folding>
+                <element signature="e#21#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+              <folding>
+                <element signature="e#20#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Message_handler.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="11" selection-start="914" selection-end="914" vertical-scroll-proportion="0.5045872" vertical-offset="160" max-vertical-offset="750">
+            <state line="30" column="0" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.7846154" vertical-offset="195" max-vertical-offset="750">
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -80,8 +93,10 @@
       <file leaf-file-name="RoutingTable.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Routing/RoutingTable.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="684" selection-end="684" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-              <folding />
+            <state line="27" column="35" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0" vertical-offset="74" max-vertical-offset="600">
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,7 +104,7 @@
       <file leaf-file-name="Send_formatter.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Messages/Send_formatter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="41" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+            <state line="13" column="22" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
               <folding />
             </state>
           </provider>
@@ -125,8 +140,8 @@
         <option value="$PROJECT_DIR$/src/Peer_search.py" />
         <option value="$PROJECT_DIR$/src/networking/IP_struct.py" />
         <option value="$PROJECT_DIR$/src/Node.py" />
-        <option value="$PROJECT_DIR$/src/Messages/Send_formatter.py" />
         <option value="$PROJECT_DIR$/src/networking/Network_utils.py" />
+        <option value="$PROJECT_DIR$/src/Messages/Send_formatter.py" />
         <option value="$PROJECT_DIR$/src/Routing/RoutingTable.py" />
         <option value="$PROJECT_DIR$/src/Messages/Message_handler.py" />
       </list>
@@ -135,8 +150,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="-4" />
-    <option name="width" value="1682" />
-    <option name="height" value="1055" />
+    <option name="width" value="1368" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -688,7 +703,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-4" width="1682" height="1055" extended-state="6" />
+    <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -697,11 +712,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17559524" sideWeight="0.62095034" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39956802" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.215959" sideWeight="0.59006214" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4099379" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3790497" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3790497" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -737,34 +752,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/src/Routing/RoutingTable.py</url>
-          <line>20</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="66" />
+      <option name="time" value="73" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testing/Test_all.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="19" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1710">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Global/Global_consts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="27" selection-start="96" selection-end="96" vertical-scroll-proportion="0.086107925" vertical-offset="0" max-vertical-offset="871">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/json/encoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="183" column="0" selection-start="6815" selection-end="6815" vertical-scroll-proportion="0.17522322" vertical-offset="2588" max-vertical-offset="6810">
@@ -795,33 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="44" selection-start="403" selection-end="403" vertical-scroll-proportion="0.41401273" vertical-offset="0" max-vertical-offset="471">
-          <folding>
-            <element signature="e#20#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Peer_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="525" selection-end="525" vertical-scroll-proportion="0.6687898" vertical-offset="0" max-vertical-offset="555">
-          <folding>
-            <element signature="e#21#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Node.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1132" selection-end="1132" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="600">
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/networking/IP_struct.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="38" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
@@ -829,9 +796,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Messages/Send_formatter.py">
+    <entry file="file://$PROJECT_DIR$/src/networking/Network_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="41" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+        <state line="8" column="0" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
           <folding />
         </state>
       </provider>
@@ -843,9 +810,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/networking/Network_utils.py">
+    <entry file="file://$PROJECT_DIR$/src/Node.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+        <state line="32" column="0" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.0" vertical-offset="74" max-vertical-offset="600">
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Peer_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <folding>
+            <element signature="e#21#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <folding>
+            <element signature="e#20#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="337" column="0" selection-start="14231" selection-end="14231" vertical-scroll-proportion="0.0" vertical-offset="4839" max-vertical-offset="5340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/json/decoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="364" column="0" selection-start="13120" selection-end="13120" vertical-scroll-proportion="0.3174905" vertical-offset="5233" max-vertical-offset="5790">
           <folding />
         </state>
       </provider>
@@ -859,14 +860,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Routing/RoutingTable.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="684" selection-end="684" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+        <state line="27" column="35" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0" vertical-offset="74" max-vertical-offset="600">
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Messages/Send_formatter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="22" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="11" selection-start="914" selection-end="914" vertical-scroll-proportion="0.5045872" vertical-offset="160" max-vertical-offset="750">
+        <state line="30" column="0" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.7846154" vertical-offset="195" max-vertical-offset="750">
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
