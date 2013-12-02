@@ -17,7 +17,7 @@ class RoutingTable(object):
     def get_ip_of_node_closest_to_id(self, node_id):
         node_id = int(node_id)
         if self.node_id == node_id:
-            return self.node_ip
+            return None
         sorted_ids = sorted(self.__table.keys())
 
         closest = 0
@@ -25,10 +25,9 @@ class RoutingTable(object):
             if abs(node_id-i) < abs(node_id-closest):
                 closest = i
 
-        return self.__table[closest]
+        return {"node_id":closest, "ip_address": self.__table[closest]}
 
     def load_routing_info(self, list_of_info):
-        #[self.add_routing_info(entry.keys(), entry[entry.keys()]) for entry in list_of_info]
         for entry in list_of_info:
             self.add_routing_info(entry["node_id"], entry["ip_address"])
-        pass
+

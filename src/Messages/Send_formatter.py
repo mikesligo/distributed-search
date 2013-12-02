@@ -22,3 +22,11 @@ class Send_formatter(object):
         message["ip_address"] = str(self.table.node_ip)
         jsoned_msg = json.dumps(message)
         return jsoned_msg
+
+    def send_joining_network_relay(self, node_id):
+        message = {}
+        message["type"] = "JOINING_NETWORK_RELAY"
+        message["node_id"] = node_id
+        message["gateway_id"] = self.table.node_id
+        jsoned_msg = json.dumps(message)
+        return jsoned_msg
