@@ -31,3 +31,5 @@ class RoutingTable(object):
         for entry in list_of_info:
             self.add_routing_info(entry["node_id"], entry["ip_address"])
 
+    def get_ip_of_node(self, node_id):
+        return self.__table[node_id]
