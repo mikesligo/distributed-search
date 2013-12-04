@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47209205-265a-4041-ab71-24e71018ff20" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/networking/Listener.py" afterPath="$PROJECT_DIR$/src/networking/Listener.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Messages/Message_handler.py" afterPath="$PROJECT_DIR$/src/Messages/Message_handler.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Routing/RoutingTable.py" afterPath="$PROJECT_DIR$/src/Routing/RoutingTable.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Messages/Send_formatter.py" afterPath="$PROJECT_DIR$/src/Messages/Send_formatter.py" />
@@ -41,7 +42,7 @@
       <file leaf-file-name="Listener.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/networking/Listener.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="270">
+            <state line="10" column="0" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
               <folding />
             </state>
           </provider>
@@ -50,25 +51,16 @@
       <file leaf-file-name="Peer_search.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Peer_search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="555">
+            <state line="22" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="345">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Message_handler.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Message_handler.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="39" selection-start="1976" selection-end="1976" vertical-scroll-proportion="0.5648649" vertical-offset="571" max-vertical-offset="1095">
+            <state line="40" column="0" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0" vertical-offset="399" max-vertical-offset="1215">
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -76,11 +68,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoutingTable.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="IP_Parser.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/networking/IP_Parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="0" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoutingTable.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Routing/RoutingTable.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="16" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
-              <folding />
+            <state line="7" column="34" selection-start="156" selection-end="156" vertical-scroll-proportion="0.103626944" vertical-offset="65" max-vertical-offset="705">
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,7 +91,7 @@
       <file leaf-file-name="Send_formatter.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Messages/Send_formatter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="46" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+            <state line="31" column="34" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
               <folding />
             </state>
           </provider>
@@ -118,16 +121,16 @@
         <option value="$PROJECT_DIR$/src/networking/IP_Parser.py" />
         <option value="$PROJECT_DIR$/testing/Data_test_scripts.py" />
         <option value="$PROJECT_DIR$/src/Messages/Message_sender.py" />
-        <option value="$PROJECT_DIR$/src/networking/Listener.py" />
         <option value="$PROJECT_DIR$/src/Parser.py" />
         <option value="$PROJECT_DIR$/src/Main.py" />
         <option value="$PROJECT_DIR$/src/Peer_search.py" />
         <option value="$PROJECT_DIR$/src/networking/IP_struct.py" />
         <option value="$PROJECT_DIR$/src/Node.py" />
         <option value="$PROJECT_DIR$/src/networking/Network_utils.py" />
+        <option value="$PROJECT_DIR$/src/networking/Listener.py" />
         <option value="$PROJECT_DIR$/src/Messages/Send_formatter.py" />
-        <option value="$PROJECT_DIR$/src/Routing/RoutingTable.py" />
         <option value="$PROJECT_DIR$/src/Messages/Message_handler.py" />
+        <option value="$PROJECT_DIR$/src/Routing/RoutingTable.py" />
       </list>
     </option>
   </component>
@@ -163,7 +166,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -294,17 +296,18 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="fileTemplates" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project" />
+    <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -604,6 +607,10 @@
       <module name="distributed-search" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Main.py" />
       <option name="PARAMETERS" value="--bootstrap 127.0.0.1:8767 --id 19 --ip 127.0.0.1:8769" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
     <list size="8">
@@ -714,27 +721,31 @@
       <created>1385981266473</created>
       <updated>1385981266473</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="joining network_relay recusive..">
+      <created>1385983744280</created>
+      <updated>1385983744280</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.215959" sideWeight="0.621118" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4099379" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16178624" sideWeight="0.6459627" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40895522" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.378882" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35403726" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -764,14 +775,22 @@
     <MESSAGE value="ok joining network works but isn't receiving routing info" />
     <MESSAGE value="sending and receiving works" />
     <MESSAGE value="Forwarding network_relay messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Forwarding network_relay messages" />
+    <MESSAGE value="joining network_relay recusive.." />
+    <option name="LAST_COMMIT_MESSAGE" value="joining network_relay recusive.." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/src/Messages/Message_handler.py</url>
+          <line>70</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="75" />
+      <option name="time" value="92" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -787,35 +806,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/networking/Network_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/networking/Listener.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <folding />
-        </state>
+        <state line="8" column="0" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Node.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="0" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.0" vertical-offset="74" max-vertical-offset="600">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Peer_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
           <folding />
         </state>
       </provider>
@@ -830,51 +826,68 @@
         <state line="364" column="0" selection-start="13120" selection-end="13120" vertical-scroll-proportion="0.3174905" vertical-offset="5233" max-vertical-offset="5790" />
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python2.7/socket.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="0" selection-start="7712" selection-end="7712" vertical-scroll-proportion="0.3174905" vertical-offset="3133" max-vertical-offset="8640" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/networking/IP_Parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="24" selection-start="588" selection-end="588" vertical-scroll-proportion="0.5602716" vertical-offset="0" max-vertical-offset="589">
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="31" selection-start="832" selection-end="832" vertical-scroll-proportion="0.48387095" vertical-offset="0" max-vertical-offset="589">
+        <state line="20" column="31" selection-start="832" selection-end="832" vertical-scroll-proportion="0.48387095" vertical-offset="0" max-vertical-offset="589" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/networking/IP_struct.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="38" selection-start="331" selection-end="331" vertical-scroll-proportion="0.64615387" vertical-offset="0" max-vertical-offset="325" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/socket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="223" column="0" selection-start="7712" selection-end="7712" vertical-scroll-proportion="0.48405796" vertical-offset="3133" max-vertical-offset="8640" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/networking/Listener.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Messages/Send_formatter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="46" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+        <state line="31" column="34" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="615">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Routing/RoutingTable.py">
+    <entry file="file://$PROJECT_DIR$/src/networking/IP_Parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="16" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+        <state line="15" column="0" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/networking/IP_struct.py">
+    <entry file="file://$PROJECT_DIR$/src/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="38" selection-start="331" selection-end="331" vertical-scroll-proportion="0.64615387" vertical-offset="0" max-vertical-offset="325">
+        <state line="17" column="0" selection-start="512" selection-end="512" vertical-scroll-proportion="0.503876" vertical-offset="0" max-vertical-offset="387">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Peer_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="39" selection-start="1976" selection-end="1976" vertical-scroll-proportion="0.5648649" vertical-offset="571" max-vertical-offset="1095">
+        <state line="40" column="0" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.0" vertical-offset="399" max-vertical-offset="1215">
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Routing/RoutingTable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="34" selection-start="156" selection-end="156" vertical-scroll-proportion="0.103626944" vertical-offset="65" max-vertical-offset="705">
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

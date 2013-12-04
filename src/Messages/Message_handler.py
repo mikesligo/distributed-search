@@ -32,36 +32,44 @@ class Message_handler(object):
 
     def handle_routing_info(self, message, sender_addr):
         self.table.load_routing_info(message["route_table"])
+        self.table.add_routing_info(message["gateway_id"], message["ip_address"])
 
     def handle_joining_network_relay(self, message):
+        gateway_id = message["gateway_id"]
         node_id = message["node_id"]
-        to_send = self.send_formatter.send_routing_info(node_id, self.table.node_id)
-        self.send_to_node_id(to_send, node_id)
 
         closest_node = self.table.get_ip_of_node_closest_to_id(node_id)
         if closest_node:
-            self.forward_joining_network_relay(closest_node)
+            self.forward_joining_network_relay(message, closest_node)
+
+        to_send = self.send_formatter.send_routing_info(node_id, gateway_id)
+        self.send_to_node_id(to_send, gateway_id)
 
     def send_to_node_id(self, message, node_id):
-        node_ip = self.table.get_ip_of_node(node_id)
+        try:
+            node_ip = self.table.get_ip_of_node(node_id)
+        except KeyError:
+            print "Error - Could not find ip of node " + str(node_id)
+            return
         normalised_ip = self.parser.parse(node_ip).get_ip_pair()
         self.socket.sendto(message, normalised_ip)
 
     def handle_joining_network(self, message, sender_addr):
         node_id = message["node_id"]
         node_ip = message["ip_address"]
-        self.table.add_routing_info(node_id, node_ip)
-        self.table.add_routing_info(2, node_ip)
-        self.table.add_routing_info(11, node_ip)
-        self.table.add_routing_info(25, node_ip)
-        to_send = self.send_formatter.send_routing_info(node_id, self.table.node_id)
-        self.socket.sendto(to_send, sender_addr)
 
         closest_node = self.table.get_ip_of_node_closest_to_id(node_id)
         if closest_node:
-            self.forward_joining_network_relay(closest_node)
+            self.send_joining_network_relay(node_id, closest_node)
 
-    def forward_joining_network_relay(self, closest_node):
-        to_send = self.send_formatter.send_joining_network_relay(closest_node["node_id"])
+        self.table.add_routing_info(node_id, node_ip)
+        to_send = self.send_formatter.send_routing_info(node_id, self.table.node_id)
+        self.socket.sendto(to_send, sender_addr)
+
+    def forward_joining_network_relay(self, message, closest_node):
         normalised_ip = self.parser.parse(closest_node["ip_address"]).get_ip_pair()
-        self.socket.sendto(to_send, normalised_ip)
+        self.socket.sendto(message, normalised_ip)
+
+    def send_joining_network_relay(self, node_id, closest_node):
+        to_send = self.send_formatter.send_joining_network_relay(node_id)
+        self.forward_joining_network_relay(to_send, closest_node)
