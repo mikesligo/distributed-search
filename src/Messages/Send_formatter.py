@@ -6,7 +6,6 @@ class Send_formatter(object):
         self.table = table
 
     def send_routing_info(self, node_id, gateway_node_id):
-        print "Sending ROUTING_INFO"
         message = {}
         message["type"] = "ROUTING_INFO"
         message["gateway_id"] = gateway_node_id
@@ -17,7 +16,6 @@ class Send_formatter(object):
         return jsoned_msg
 
     def send_joining_network(self):
-        print "Sending JOINING_NETWORK"
         message = {}
         message["type"] = "JOINING_NETWORK"
         message["node_id"] = self.table.node_id
@@ -26,7 +24,6 @@ class Send_formatter(object):
         return jsoned_msg
 
     def send_joining_network_relay(self, node_id):
-        print "Sending JOINING_NETWORK_RELAY"
         message = {}
         message["type"] = "JOINING_NETWORK_RELAY"
         message["node_id"] = node_id

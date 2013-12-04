@@ -7,6 +7,8 @@ class RoutingTable(object):
         self.__table = {}
         self.node_id = int(node_id)
         self.node_ip = node_ip
+        print "ID: " + str(node_id)
+        print "IP: " + str(node_ip)
 
     def add_routing_info(self, id, ip):
         if int(self.node_id) != int(id):
@@ -15,7 +17,7 @@ class RoutingTable(object):
     def get_routing_table_json(self):
         return [{"node_id":entry, "ip_address":str(self.__table[entry])} for entry in self.__table.keys() if entry != self.node_id]
 
-    def get_ip_of_node_closest_to_id(self, node_id):
+    def get_ip_of_node_closest_to_id(self, node_id): # I'm allowed 1 hacky method
         if not any(self.__table):
             return None
         node_id = int(node_id)
@@ -29,6 +31,9 @@ class RoutingTable(object):
                 closest = i
 
         if abs(node_id-self.node_id) <= abs(node_id-closest):
+            return None
+
+        if closest not in sorted_ids:
             return None
 
         return {"node_id":closest, "ip_address": self.__table[closest]}
