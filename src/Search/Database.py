@@ -7,7 +7,11 @@ class Database(object):
     def get_results(self, word):
         return [result for result in self.__db[word]]
 
-    def index_result(self, word, url):
+    def index_results(self, word, urls):
+        for url in urls:
+            self.__index_result(word, url)
+
+    def __index_result(self, word, url):
         result = self.__db[word]
 
         for entry in result:
@@ -16,3 +20,4 @@ class Database(object):
                 return
 
         result.append({"url":url, "rank":1})
+

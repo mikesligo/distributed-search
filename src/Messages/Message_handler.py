@@ -77,14 +77,11 @@ class Message_handler(object):
     def __gateway_id_is_me(self, gateway_id):
         return int(gateway_id) == int(self.table.node_id)
 
-
     def handle_joining_network_relay(self, message):
         gateway_id = message["gateway_id"]
         node_id = message["node_id"]
 
-        closest_node = self.table.get_ip_of_node_closest_to_id(node_id)
-        if closest_node:
-            self.forward_joining_network_relay(message, closest_node)
+        self.__forward_message_to_closest_node(message, node_id)
 
         to_send = self.__send_formatter.send_routing_info(node_id, gateway_id)
         self.send_to_node_id(to_send, gateway_id)
@@ -97,21 +94,12 @@ class Message_handler(object):
         node_id = message["node_id"]
         node_ip = message["ip_address"]
 
-        closest_node = self.table.get_ip_of_node_closest_to_id(node_id)
-        if closest_node:
-            self.send_initial_joining_network_relay(node_id, closest_node)
+        to_send_forward = self.__send_formatter.send_joining_network_relay(node_id)
+        self.__forward_message_to_closest_node(to_send_forward, node_id)
 
         to_send = self.__send_formatter.send_routing_info(node_id, self.table.node_id)
         self.table.add_routing_info(node_id, node_ip)
         self.send_message(to_send, sender_addr)
-
-    def forward_joining_network_relay(self, message, closest_node):
-        ip = self.__normalise_ip_to_pair(closest_node["node_id"])
-        self.send_message(message, ip)
-
-    def send_initial_joining_network_relay(self, node_id, closest_node):
-        to_send = self.__send_formatter.send_joining_network_relay(node_id)
-        self.forward_joining_network_relay(to_send, closest_node)
 
     def send_message(self, message, sender_addr):
         sender_ip = sender_addr[0]
@@ -147,9 +135,7 @@ class Message_handler(object):
         results = self.__db.get_results(word)
         message = self.__send_formatter(word, target_node_id, results)
 
-        closest_node = self.table.get_ip_of_node_closest_to_id(target_node_id)
-        if closest_node:
-            self.forward_received_message(message, closest_node)
+        self.__forward_message_to_closest_node(message, target_node_id)
 
     def handle_search_response(self, message):
         node_id = message["node_id"]
@@ -161,14 +147,30 @@ class Message_handler(object):
             search_result.load_results_from_response(word, responses)
             return search_result
         else:
-            closest_node = self.table.get_ip_of_node_closest_to_id(node_id)
-            if closest_node:
-                self.forward_received_message(message, closest_node)
-
-    def forward_received_message(self, message, node_id):
-        ip = self.__normalise_ip_to_pair(node_id)
-        jsoned = json.dumps(message)
-        self.send_message(jsoned, node_id)
+            self.__forward_message_to_closest_node(message, node_id)
 
     def handle_index(self, message):
-        pass
+        target_id = message["target_id"]
+        if self.__node_id_is_me(target_id):
+            self.__send_ack(target_id)
+
+            word = message["keyword"]
+            urls = message["link"]
+            self.__db.index_results(word, urls)
+        else:
+            self.__forward_message_to_closest_node(message, target_id)
+
+    def send_ack(self, target_id):
+        message = self.__send_formatter.ack(target_id)
+        ip = self.__normalise_ip_to_pair(target_id)
+        self.send_message(message, ip)
+
+    def __forward_message_to_closest_node(self, message, node_id):
+        closest_node = self.table.get_ip_of_node_closest_to_id(node_id)
+        if closest_node:
+            self.__forward_received_message(message, closest_node)
+
+    def __forward_received_message(self, message, node_id):
+        ip = self.__normalise_ip_to_pair(node_id)
+        jsoned = json.dumps(message)
+        self.send_message(jsoned, ip)

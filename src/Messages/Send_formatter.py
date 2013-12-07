@@ -49,3 +49,11 @@ class Send_formatter(object):
         message["results"] = results
         jsoned_msg = json.dumps(message)
         return jsoned_msg
+
+    def ack(self, node_id):
+        message = {}
+        message["type"] = "ACK"
+        message["node_id"] = node_id
+        message["ip_address"] = str(self.table.node_ip)
+        jsoned_msg = json.dumps(message)
+        return jsoned_msg
