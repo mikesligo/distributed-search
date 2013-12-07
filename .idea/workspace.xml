@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47209205-265a-4041-ab71-24e71018ff20" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Search/Database.py" afterPath="$PROJECT_DIR$/src/Search/Database.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Messages/Message_handler.py" afterPath="$PROJECT_DIR$/src/Messages/Message_handler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Messages/Send_formatter.py" afterPath="$PROJECT_DIR$/src/Messages/Send_formatter.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="distributed-search.iws" />
@@ -65,7 +62,7 @@
       <file leaf-file-name="Message_handler.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="175" column="8" selection-start="6832" selection-end="6832" vertical-scroll-proportion="0.82173175" vertical-offset="2141" max-vertical-offset="2730">
+            <state line="157" column="8" selection-start="6102" selection-end="6102" vertical-scroll-proportion="0.36332768" vertical-offset="2141" max-vertical-offset="2730">
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -844,7 +841,11 @@
       <created>1386422682924</created>
       <updated>1386422682924</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="big refactor of forwarding message, once again untested">
+      <created>1386424349934</created>
+      <updated>1386424349934</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -900,7 +901,8 @@
     <MESSAGE value="Refactored &amp; better error messages" />
     <MESSAGE value="handling search written but not tested" />
     <MESSAGE value="searching should work, still not tested, some indexing code added" />
-    <option name="LAST_COMMIT_MESSAGE" value="searching should work, still not tested, some indexing code added" />
+    <MESSAGE value="big refactor of forwarding message, once again untested" />
+    <option name="LAST_COMMIT_MESSAGE" value="big refactor of forwarding message, once again untested" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1018,7 +1020,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="8" selection-start="6832" selection-end="6832" vertical-scroll-proportion="0.82173175" vertical-offset="2141" max-vertical-offset="2730">
+        <state line="157" column="8" selection-start="6102" selection-end="6102" vertical-scroll-proportion="0.36332768" vertical-offset="2141" max-vertical-offset="2730">
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
