@@ -4,6 +4,7 @@ from src.networking.IP_Parser import IP_Parser
 from Exceptions.Table_lookup_failed_exception import Table_lookup_failed_exception
 from src.Encoder import Encoder
 from src.Search.Search_results import Search_results
+from src.Search.Database import Database
 
 class Message_handler(object):
 
@@ -13,6 +14,7 @@ class Message_handler(object):
         self.socket = socket
         self.__send_formatter = Send_formatter(self.table)
         self.__encoder = Encoder()
+        self.__db = Database()
 
     def handle(self, data, sender_addr):
         message = json.loads(data)
@@ -33,6 +35,10 @@ class Message_handler(object):
             self.handle_joining_network_relay(message)
         if message.type == "SEARCH_RESPONSE":
             self.handle_search_response(message)
+        if message.type == "SEARCH":
+            self.handle_search(message)
+        if message.type == "INDEX":
+            self.handle_index(message)
 
     def __valid_message(self, message_type):
         return message_type
@@ -135,6 +141,16 @@ class Message_handler(object):
 
         #TODO handle pings
 
+    def handle_search(self, message):
+        word = message["word"]
+        target_node_id = message["sender_id"]
+        results = self.__db.get_results(word)
+        message = self.__send_formatter(word, target_node_id, results)
+
+        closest_node = self.table.get_ip_of_node_closest_to_id(target_node_id)
+        if closest_node:
+            self.forward_received_message(message, closest_node)
+
     def handle_search_response(self, message):
         node_id = message["node_id"]
 
@@ -153,3 +169,6 @@ class Message_handler(object):
         ip = self.__normalise_ip_to_pair(node_id)
         jsoned = json.dumps(message)
         self.send_message(jsoned, node_id)
+
+    def handle_index(self, message):
+        pass

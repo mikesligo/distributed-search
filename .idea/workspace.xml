@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47209205-265a-4041-ab71-24e71018ff20" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Search/Database.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Search/Search_results.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Search/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Encoder.py" afterPath="$PROJECT_DIR$/src/Encoder.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Search/Database.py" afterPath="$PROJECT_DIR$/src/Search/Database.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Messages/Message_handler.py" afterPath="$PROJECT_DIR$/src/Messages/Message_handler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Node.py" afterPath="$PROJECT_DIR$/src/Node.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Peer_search.py" afterPath="$PROJECT_DIR$/src/Peer_search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Routing/RoutingTable.py" afterPath="$PROJECT_DIR$/src/Routing/RoutingTable.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Messages/Send_formatter.py" afterPath="$PROJECT_DIR$/src/Messages/Send_formatter.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -62,11 +56,8 @@
       <file leaf-file-name="Peer_search.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Peer_search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="46" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="540">
-              <folding>
-                <marker date="1386417369948" expanded="true" signature="137:802" placeholder="..." />
-                <marker date="1386417369948" expanded="true" signature="770:802" placeholder="..." />
-              </folding>
+            <state line="4" column="46" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,10 +65,19 @@
       <file leaf-file-name="Message_handler.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="16" selection-start="967" selection-end="967" vertical-scroll-proportion="0.37292817" vertical-offset="285" max-vertical-offset="2415">
+            <state line="151" column="63" selection-start="6058" selection-end="6058" vertical-scroll-proportion="0.2614601" vertical-offset="2111" max-vertical-offset="2700">
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Database.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Search/Database.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="0" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,6 +86,19 @@
         <entry file="file://$PROJECT_DIR$/src/Search/Search_results.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="6" column="33" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+              <folding>
+                <marker date="1386420036184" expanded="true" signature="29:289" placeholder="..." />
+                <marker date="1386420036184" expanded="true" signature="54:80" placeholder="..." />
+                <marker date="1386420036184" expanded="true" signature="140:289" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Send_formatter.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Messages/Send_formatter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="24" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="855">
               <folding />
             </state>
           </provider>
@@ -104,7 +117,10 @@
         <entry file="file://$PROJECT_DIR$/src/Routing/RoutingTable.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="47" column="26" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.0" vertical-offset="348" max-vertical-offset="810">
-              <folding />
+              <folding>
+                <marker date="1386419307784" expanded="true" signature="52:1504" placeholder="..." />
+                <marker date="1386419307784" expanded="true" signature="1469:1504" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,10 +154,10 @@
         <option value="$PROJECT_DIR$/src/Peer_search.py" />
         <option value="$PROJECT_DIR$/src/Node.py" />
         <option value="$PROJECT_DIR$/src/Encoder.py" />
-        <option value="$PROJECT_DIR$/src/Messages/Send_formatter.py" />
         <option value="$PROJECT_DIR$/src/Routing/RoutingTable.py" />
-        <option value="$PROJECT_DIR$/src/Search/Database.py" />
         <option value="$PROJECT_DIR$/src/Search/Search_results.py" />
+        <option value="$PROJECT_DIR$/src/Search/Database.py" />
+        <option value="$PROJECT_DIR$/src/Messages/Send_formatter.py" />
         <option value="$PROJECT_DIR$/src/Messages/Message_handler.py" />
       </list>
     </option>
@@ -845,7 +861,11 @@
       <created>1386416601196</created>
       <updated>1386416601196</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="handling search written but not tested">
+      <created>1386420483091</created>
+      <updated>1386420483091</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -861,7 +881,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4083851" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35248446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35248446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -899,7 +919,8 @@
     <MESSAGE value="finally network works" />
     <MESSAGE value="networking works according to the spec, which means nodes can only communicate through gateways ish" />
     <MESSAGE value="Refactored &amp; better error messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored &amp; better error messages" />
+    <MESSAGE value="handling search written but not tested" />
+    <option name="LAST_COMMIT_MESSAGE" value="handling search written but not tested" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -946,13 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Messages/Send_formatter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="52" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.6270718" vertical-offset="343" max-vertical-offset="705">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Encoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="0" selection-start="267" selection-end="267" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
@@ -987,40 +1001,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Peer_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="46" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="540">
-          <folding>
-            <marker date="1386417369948" expanded="true" signature="137:802" placeholder="..." />
-            <marker date="1386417369948" expanded="true" signature="770:802" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Routing/RoutingTable.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="26" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.0" vertical-offset="348" max-vertical-offset="810">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Search/Database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="8" selection-start="57" selection-end="57" vertical-scroll-proportion="0.11627907" vertical-offset="0" max-vertical-offset="387">
-          <folding />
+          <folding>
+            <marker date="1386419307784" expanded="true" signature="52:1504" placeholder="..." />
+            <marker date="1386419307784" expanded="true" signature="1469:1504" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Search/Search_results.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="33" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <folding>
+            <marker date="1386420036184" expanded="true" signature="29:289" placeholder="..." />
+            <marker date="1386420036184" expanded="true" signature="54:80" placeholder="..." />
+            <marker date="1386420036184" expanded="true" signature="140:289" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Search/Database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Peer_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="46" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Messages/Send_formatter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="24" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="855">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="16" selection-start="967" selection-end="967" vertical-scroll-proportion="0.37292817" vertical-offset="285" max-vertical-offset="2415">
+        <state line="151" column="63" selection-start="6058" selection-end="6058" vertical-scroll-proportion="0.2614601" vertical-offset="2111" max-vertical-offset="2700">
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
