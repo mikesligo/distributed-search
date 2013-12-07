@@ -28,17 +28,17 @@ class Message_handler(object):
         print message
 
         if message_type == "JOINING_NETWORK":
-            self.handle_joining_network(message, sender_addr)
+            self.__handle_joining_network(message, sender_addr)
         if message_type == "ROUTING_INFO":
-            self.handle_routing_info(message, sender_addr)
+            self.__handle_routing_info(message, sender_addr)
         if message_type == "JOINING_NETWORK_RELAY":
-            self.handle_joining_network_relay(message)
+            self.__handle_joining_network_relay(message)
         if message.type == "SEARCH_RESPONSE":
-            self.handle_search_response(message)
+            self.__handle_search_response(message)
         if message.type == "SEARCH":
-            self.handle_search(message)
+            self.__handle_search(message)
         if message.type == "INDEX":
-            self.handle_index(message)
+            self.__handle_index(message)
 
     def __valid_message(self, message_type):
         return message_type
@@ -47,7 +47,7 @@ class Message_handler(object):
         to_send = self.__send_formatter.send_joining_network()
         self.send_message(to_send, bootstrap_ip.get_ip_pair())
 
-    def handle_routing_info(self, message, sender_addr):
+    def __handle_routing_info(self, message, sender_addr):
         self.table.load_routing_info(message["route_table"])
         if self.__sender_is_gateway(message, sender_addr):
             self.table.add_routing_info(message["gateway_id"], message["ip_address"])
@@ -77,7 +77,7 @@ class Message_handler(object):
     def __gateway_id_is_me(self, gateway_id):
         return int(gateway_id) == int(self.table.node_id)
 
-    def handle_joining_network_relay(self, message):
+    def __handle_joining_network_relay(self, message):
         gateway_id = message["gateway_id"]
         node_id = message["node_id"]
 
@@ -90,7 +90,7 @@ class Message_handler(object):
         ip = self.__normalise_ip_to_pair(node_id)
         self.send_message(message, ip)
 
-    def handle_joining_network(self, message, sender_addr):
+    def __handle_joining_network(self, message, sender_addr):
         node_id = message["node_id"]
         node_ip = message["ip_address"]
 
@@ -129,7 +129,7 @@ class Message_handler(object):
 
         #TODO handle pings
 
-    def handle_search(self, message):
+    def __handle_search(self, message):
         word = message["word"]
         target_node_id = message["sender_id"]
         results = self.__db.get_results(word)
@@ -137,7 +137,7 @@ class Message_handler(object):
 
         self.__forward_message_to_closest_node(message, target_node_id)
 
-    def handle_search_response(self, message):
+    def __handle_search_response(self, message):
         node_id = message["node_id"]
 
         if self.__node_id_is_me(node_id):
@@ -149,7 +149,7 @@ class Message_handler(object):
         else:
             self.__forward_message_to_closest_node(message, node_id)
 
-    def handle_index(self, message):
+    def __handle_index(self, message):
         target_id = message["target_id"]
         if self.__node_id_is_me(target_id):
             self.__send_ack(target_id)
@@ -161,7 +161,7 @@ class Message_handler(object):
         else:
             self.__forward_message_to_closest_node(message, target_id)
 
-    def send_ack(self, target_id):
+    def __send_ack(self, target_id):
         message = self.__send_formatter.ack(target_id)
         ip = self.__normalise_ip_to_pair(target_id)
         self.send_message(message, ip)
