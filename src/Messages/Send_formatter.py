@@ -30,3 +30,12 @@ class Send_formatter(object):
         message["gateway_id"] = self.table.node_id
         jsoned_msg = json.dumps(message)
         return jsoned_msg
+
+    def search(self, word, node_id):
+        message = {}
+        message["type"] = "SEARCH"
+        message["word"] = word
+        message["node_id"] = node_id
+        message["sender_id"] = str(self.table.node_id)
+        jsoned_msg = json.dumps(message)
+        return jsoned_msg

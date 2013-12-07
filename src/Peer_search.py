@@ -29,4 +29,4 @@ class Peer_search():
         pass
 
     def search(self, words):
-        pass
+        self.node.search(words)

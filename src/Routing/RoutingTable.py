@@ -44,3 +44,6 @@ class RoutingTable(object):
 
     def get_ip_of_node(self, node_id):
         return self.__table[node_id]
+
+    def remove_node_from_table(self, node_id):
+        del(self.__table[node_id])

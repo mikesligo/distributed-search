@@ -9,7 +9,7 @@ from src.Messages.Message_handler import Message_handler
 class Node():
 
     def __init__(self, socket, id, ip):
-        self.encoder = Encoder()
+        self.__encoder = Encoder()
         self.socket = socket
         id = id or self.__generate_random_id()
         parser = IP_Parser()
@@ -21,7 +21,7 @@ class Node():
         self.message_handler = Message_handler(self.table, self.socket)
 
     def __generate_random_id(self):
-        return self.encoder.generate_random_id()
+        return self.__encoder.generate_random_id()
 
     def start_network(self):
         self.listener = Listener(self.message_handler)
@@ -32,3 +32,5 @@ class Node():
         self.listener = Listener(self.message_handler)
         self.listener.listen()
 
+    def search(self, words):
+        self.listener.message_handler.search(words)

@@ -2,6 +2,8 @@ import json
 from Send_formatter import Send_formatter
 from src.networking.IP_Parser import IP_Parser
 from Exceptions.Table_lookup_failed_exception import Table_lookup_failed_exception
+from src.Encoder import Encoder
+from src.Search.Search_results import Search_results
 
 class Message_handler(object):
 
@@ -10,6 +12,7 @@ class Message_handler(object):
         self.table = table
         self.socket = socket
         self.__send_formatter = Send_formatter(self.table)
+        self.__encoder = Encoder()
 
     def handle(self, data, sender_addr):
         message = json.loads(data)
@@ -28,6 +31,8 @@ class Message_handler(object):
             self.handle_routing_info(message, sender_addr)
         if message_type == "JOINING_NETWORK_RELAY":
             self.handle_joining_network_relay(message)
+        if message.type == "SEARCH_RESPONSE":
+            self.handle_search_response(message)
 
     def __valid_message(self, message_type):
         return message_type
@@ -118,3 +123,33 @@ class Message_handler(object):
             raise Table_lookup_failed_exception("Could not find ip for id " + node_id)
         normalised_ip = self.parser.parse(node_ip).get_ip_pair()
         return normalised_ip
+
+    def search(self, words):
+        for word in words:
+            hash_of_word = self.__encoder.get_hash_of_word(word)
+            print "Hash is " + hash_of_word
+            closest_node = self.table.get_ip_of_node_closest_to_id(hash_of_word)
+            message = self.__send_formatter.search(words)
+            ip = self.__normalise_ip_to_pair(closest_node)
+            self.send_message(message, ip)
+
+        #TODO handle pings
+
+    def handle_search_response(self, message):
+        node_id = message["node_id"]
+
+        if self.__node_id_is_me(node_id):
+            word = message["word"]
+            responses = message["response"]
+            search_result = Search_results()
+            search_result.load_results_from_response(word, responses)
+            return search_result
+        else:
+            closest_node = self.table.get_ip_of_node_closest_to_id(node_id)
+            if closest_node:
+                self.forward_received_message(message, closest_node)
+
+    def forward_received_message(self, message, node_id):
+        ip = self.__normalise_ip_to_pair(node_id)
+        jsoned = json.dumps(message)
+        self.send_message(jsoned, node_id)
