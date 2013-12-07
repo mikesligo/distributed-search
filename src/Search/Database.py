@@ -8,6 +8,7 @@ class Database(object):
         return [result for result in self.__db[word]]
 
     def index_results(self, word, urls):
+        # TODO make urls a set perhaps, need to only index once per page, not once per time on page
         for url in urls:
             self.__index_result(word, url)
 

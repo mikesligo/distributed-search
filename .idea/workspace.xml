@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47209205-265a-4041-ab71-24e71018ff20" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Search/Database.py" afterPath="$PROJECT_DIR$/src/Search/Database.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Messages/Message_handler.py" afterPath="$PROJECT_DIR$/src/Messages/Message_handler.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="distributed-search.iws" />
@@ -14,7 +16,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
@@ -59,10 +61,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Message_handler.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Message_handler.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="157" column="8" selection-start="6102" selection-end="6102" vertical-scroll-proportion="0.36332768" vertical-offset="2141" max-vertical-offset="2730">
+            <state line="158" column="59" selection-start="6188" selection-end="6188" vertical-scroll-proportion="0.0" vertical-offset="2115" max-vertical-offset="2745">
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -70,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Database.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Search/Database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="40" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+            <state line="10" column="98" selection-start="339" selection-end="339" vertical-scroll-proportion="0.25466892" vertical-offset="0" max-vertical-offset="589">
               <folding />
             </state>
           </provider>
@@ -129,8 +131,8 @@
         <option value="$PROJECT_DIR$/src/Routing/RoutingTable.py" />
         <option value="$PROJECT_DIR$/src/Search/Search_results.py" />
         <option value="$PROJECT_DIR$/src/Messages/Send_formatter.py" />
-        <option value="$PROJECT_DIR$/src/Search/Database.py" />
         <option value="$PROJECT_DIR$/src/Messages/Message_handler.py" />
+        <option value="$PROJECT_DIR$/src/Search/Database.py" />
       </list>
     </option>
   </component>
@@ -845,7 +847,11 @@
       <created>1386424349934</created>
       <updated>1386424349934</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="also indexing code written, untested">
+      <created>1386424387019</created>
+      <updated>1386424387019</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -902,7 +908,8 @@
     <MESSAGE value="handling search written but not tested" />
     <MESSAGE value="searching should work, still not tested, some indexing code added" />
     <MESSAGE value="big refactor of forwarding message, once again untested" />
-    <option name="LAST_COMMIT_MESSAGE" value="big refactor of forwarding message, once again untested" />
+    <MESSAGE value="also indexing code written, untested" />
+    <option name="LAST_COMMIT_MESSAGE" value="also indexing code written, untested" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -997,20 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Messages/Send_formatter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="53" selection-start="1856" selection-end="1856" vertical-scroll-proportion="0.0" vertical-offset="371" max-vertical-offset="975">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Search/Database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="40" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Search/Search_results.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="33" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
@@ -1018,12 +1011,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Messages/Send_formatter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="53" selection-start="1856" selection-end="1856" vertical-scroll-proportion="0.0" vertical-offset="371" max-vertical-offset="975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="8" selection-start="6102" selection-end="6102" vertical-scroll-proportion="0.36332768" vertical-offset="2141" max-vertical-offset="2730">
+        <state line="158" column="59" selection-start="6188" selection-end="6188" vertical-scroll-proportion="0.0" vertical-offset="2115" max-vertical-offset="2745">
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Search/Database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="98" selection-start="339" selection-end="339" vertical-scroll-proportion="0.25466892" vertical-offset="0" max-vertical-offset="589">
+          <folding />
         </state>
       </provider>
     </entry>

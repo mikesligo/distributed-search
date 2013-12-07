@@ -156,6 +156,7 @@ class Message_handler(object):
 
             word = message["keyword"]
             urls = message["link"]
+            # TODO add indexing code, the following is wrong
             self.__db.index_results(word, urls)
         else:
             self.__forward_message_to_closest_node(message, target_id)
