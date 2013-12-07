@@ -1,4 +1,5 @@
 from src.networking.IP_Parser import IP_Parser
+from Exceptions.Table_lookup_failed_exception import Table_lookup_failed_exception
 
 class Listener():
 
@@ -10,4 +11,7 @@ class Listener():
         while True:
             recv_data, addr = self.message_handler.socket.recvfrom(2048)
             print "Received data..."
-            self.message_handler.handle(recv_data, addr)
+            try:
+                self.message_handler.handle(recv_data, addr)
+            except Table_lookup_failed_exception as e:
+                print str(e)
