@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47209205-265a-4041-ab71-24e71018ff20" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Messages/Message_handler.py" afterPath="$PROJECT_DIR$/src/Messages/Message_handler.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="distributed-search.iws" />
@@ -63,7 +62,7 @@
       <file leaf-file-name="Message_handler.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="10" selection-start="6358" selection-end="6358" vertical-scroll-proportion="0.6366723" vertical-offset="2070" max-vertical-offset="2745">
+            <state line="165" column="50" selection-start="6490" selection-end="6490" vertical-scroll-proportion="0.6876061" vertical-offset="2070" max-vertical-offset="2745">
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -854,12 +853,16 @@
       <created>1386425063618</created>
       <updated>1386425063618</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="privatised some methods">
+      <created>1386425300769</created>
+      <updated>1386425300769</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -888,7 +891,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="first commit&#10;" />
     <MESSAGE value="initial set up and some tests for interfaces done" />
     <MESSAGE value="Set up parser and main method. TODO need to change node to take in dict of args so that I can mock later&#10;" />
     <MESSAGE value="A bunch more tests and parsing done&#10;" />
@@ -913,7 +915,8 @@
     <MESSAGE value="big refactor of forwarding message, once again untested" />
     <MESSAGE value="also indexing code written, untested" />
     <MESSAGE value="Added TODOs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added TODOs" />
+    <MESSAGE value="privatised some methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="privatised some methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1031,7 +1034,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="10" selection-start="6358" selection-end="6358" vertical-scroll-proportion="0.6366723" vertical-offset="2070" max-vertical-offset="2745">
+        <state line="165" column="50" selection-start="6490" selection-end="6490" vertical-scroll-proportion="0.6876061" vertical-offset="2070" max-vertical-offset="2745">
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
