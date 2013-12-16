@@ -5,6 +5,7 @@ from Exceptions.Table_lookup_failed_exception import Table_lookup_failed_excepti
 from src.Encoder import Encoder
 from src.Search.Search_results import Search_results
 from src.Search.Database import Database
+import threading
 
 class Message_handler(object):
 
@@ -15,6 +16,7 @@ class Message_handler(object):
         self.__send_formatter = Send_formatter(self.table)
         self.__encoder = Encoder()
         self.__db = Database()
+        self.setup_lock_event = threading.Event()
 
     def handle(self, data, sender_addr):
         message = json.loads(data)
@@ -30,14 +32,16 @@ class Message_handler(object):
         if message_type == "JOINING_NETWORK":
             self.__handle_joining_network(message, sender_addr)
         if message_type == "ROUTING_INFO":
+            self.setup_lock_event.set()
+            print "Thread unlocked from message handler..."
             self.__handle_routing_info(message, sender_addr)
         if message_type == "JOINING_NETWORK_RELAY":
             self.__handle_joining_network_relay(message)
-        if message.type == "SEARCH_RESPONSE":
+        if message_type == "SEARCH_RESPONSE":
             self.__handle_search_response(message)
-        if message.type == "SEARCH":
+        if message_type == "SEARCH":
             self.__handle_search(message)
-        if message.type == "INDEX":
+        if message_type == "INDEX":
             self.__handle_index(message)
 
     def __valid_message(self, message_type):
@@ -81,7 +85,12 @@ class Message_handler(object):
         gateway_id = message["gateway_id"]
         node_id = message["node_id"]
 
+        if self.__node_id_is_me(node_id):
+            return
         self.__forward_message_to_closest_node(message, node_id)
+
+        new_known_ip = self.table.get_ip_of_node(gateway_id)
+        self.table.add_routing_info(node_id, new_known_ip)
 
         to_send = self.__send_formatter.send_routing_info(node_id, gateway_id)
         self.send_to_node_id(to_send, gateway_id)
@@ -102,7 +111,7 @@ class Message_handler(object):
         self.send_message(to_send, sender_addr)
 
     def send_message(self, message, sender_addr):
-        sender_ip = sender_addr[0]
+        sender_ip = str(sender_addr[0])
         sender_port = str(sender_addr[1])
         loaded = json.loads(message)
         print "Sending " + loaded["type"] + " to " + sender_ip + ":" + sender_port
@@ -113,27 +122,28 @@ class Message_handler(object):
         try:
             node_ip = self.table.get_ip_of_node(node_id)
         except KeyError:
-            print "Error - Could not find ip of node " + str(node_id)
-            raise Table_lookup_failed_exception("Could not find ip for id " + node_id)
+            print "----------- Error - Could not find ip of node " + str(node_id)
+            raise Table_lookup_failed_exception("Could not find ip for id " + str(node_id))
         normalised_ip = self.parser.parse(node_ip).get_ip_pair()
         return normalised_ip
 
     def search(self, words):
         for word in words:
             hash_of_word = self.__encoder.get_hash_of_word(word)
-            print "Hash is " + hash_of_word
-            closest_node = self.table.get_ip_of_node_closest_to_id(hash_of_word)
-            message = self.__send_formatter.search(words)
-            ip = self.__normalise_ip_to_pair(closest_node)
-            self.send_message(message, ip)
-
+            print "Hash is " + str(hash_of_word)
+            closest_node = self.table.get_closest_node_id(hash_of_word)
+            if closest_node:
+                message = self.__send_formatter.search(word, closest_node)
+                ip = self.__normalise_ip_to_pair(closest_node)
+                self.send_message(message, ip)
+            #TODO what if I am the node with the info
         #TODO handle pings
 
     def __handle_search(self, message):
         word = message["word"]
         target_node_id = message["sender_id"]
         results = self.__db.get_results(word)
-        message = self.__send_formatter(word, target_node_id, results)
+        message = self.__send_formatter.search_response(word, target_node_id, results)
 
         self.__forward_message_to_closest_node(message, target_node_id)
 
@@ -153,10 +163,11 @@ class Message_handler(object):
         target_id = message["target_id"]
         if self.__node_id_is_me(target_id):
             self.__send_ack(target_id)
-
             word = message["keyword"]
             urls = message["link"]
+
             # TODO add indexing code, the following is wrong
+
             self.__db.index_results(word, urls)
         else:
             self.__forward_message_to_closest_node(message, target_id)
@@ -167,11 +178,10 @@ class Message_handler(object):
         self.send_message(message, ip)
 
     def __forward_message_to_closest_node(self, message, node_id):
-        closest_node = self.table.get_ip_of_node_closest_to_id(node_id)
+        closest_node = self.table.get_closest_node_id(node_id)
         if closest_node:
-            self.__forward_received_message(message, closest_node)
+            self.__send_message(message, closest_node)
 
-    def __forward_received_message(self, message, node_id):
+    def __send_message(self, message, node_id):
         ip = self.__normalise_ip_to_pair(node_id)
-        jsoned = json.dumps(message)
-        self.send_message(jsoned, ip)
+        self.send_message(message, ip)

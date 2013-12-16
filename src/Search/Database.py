@@ -5,6 +5,8 @@ class Database(object):
         self.__db = {}
 
     def get_results(self, word):
+        if word not in self.__db.keys():
+            return None
         return [result for result in self.__db[word]]
 
     def index_results(self, word, urls):

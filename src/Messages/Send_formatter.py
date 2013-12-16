@@ -46,7 +46,7 @@ class Send_formatter(object):
         message["word"] = word
         message["node_id"] = node_id
         message["sender_id"] = str(self.table.node_id)
-        message["results"] = results
+        message["response"] = results
         jsoned_msg = json.dumps(message)
         return jsoned_msg
 
