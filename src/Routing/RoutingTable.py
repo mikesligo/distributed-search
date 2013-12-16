@@ -11,6 +11,8 @@ class RoutingTable(object):
         print "IP: " + str(node_ip)
 
     def add_routing_info(self, id, ip):
+        if id in self.__table.keys():
+            return
         if int(self.node_id) != int(id):
             self.__table[int(id)] = ip
 

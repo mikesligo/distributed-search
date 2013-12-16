@@ -33,7 +33,6 @@ class Message_handler(object):
             self.__handle_joining_network(message, sender_addr)
         if message_type == "ROUTING_INFO":
             self.setup_lock_event.set()
-            print "Thread unlocked from message handler..."
             self.__handle_routing_info(message, sender_addr)
         if message_type == "JOINING_NETWORK_RELAY":
             self.__handle_joining_network_relay(message)
@@ -66,8 +65,8 @@ class Message_handler(object):
         node_id = message["node_id"]
         gateway_id = message["gateway_id"]
 
-        if not self.__node_id_is_me(node_id):
-            if self.__gateway_id_is_me(gateway_id):
+        if not self.__id_is_me(node_id):
+            if self.__id_is_me(gateway_id):
                 ip = self.__normalise_ip_to_pair(node_id)
                 jsoned = json.dumps(message)
                 self.send_message(jsoned, ip)
@@ -75,22 +74,20 @@ class Message_handler(object):
                 print "Error - Expecting to forward routing info but I am not gateway"
                 return
 
-    def __node_id_is_me(self, node_id):
+    def __id_is_me(self, node_id):
         return int(node_id) == int(self.table.node_id)
-
-    def __gateway_id_is_me(self, gateway_id):
-        return int(gateway_id) == int(self.table.node_id)
 
     def __handle_joining_network_relay(self, message):
         gateway_id = message["gateway_id"]
         node_id = message["node_id"]
 
-        if self.__node_id_is_me(node_id):
+        if self.__id_is_me(node_id):
             return
         self.__forward_message_to_closest_node(message, node_id)
 
-        new_known_ip = self.table.get_ip_of_node(gateway_id)
-        self.table.add_routing_info(node_id, new_known_ip)
+        if not self.__id_is_me(gateway_id):
+            new_known_ip = self.table.get_ip_of_node(gateway_id)
+            self.table.add_routing_info(node_id, new_known_ip)
 
         to_send = self.__send_formatter.send_routing_info(node_id, gateway_id)
         self.send_to_node_id(to_send, gateway_id)
@@ -150,7 +147,7 @@ class Message_handler(object):
     def __handle_search_response(self, message):
         node_id = message["node_id"]
 
-        if self.__node_id_is_me(node_id):
+        if self.__id_is_me(node_id):
             word = message["word"]
             responses = message["response"]
             search_result = Search_results()
@@ -161,7 +158,7 @@ class Message_handler(object):
 
     def __handle_index(self, message):
         target_id = message["target_id"]
-        if self.__node_id_is_me(target_id):
+        if self.__id_is_me(target_id):
             self.__send_ack(target_id)
             word = message["keyword"]
             urls = message["link"]
@@ -178,6 +175,8 @@ class Message_handler(object):
         self.send_message(message, ip)
 
     def __forward_message_to_closest_node(self, message, node_id):
+        if type(message) is dict:
+            message = json.dumps(message)
         closest_node = self.table.get_closest_node_id(node_id)
         if closest_node:
             self.__send_message(message, closest_node)
