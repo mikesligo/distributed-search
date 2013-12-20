@@ -10,17 +10,15 @@ class Database(object):
         return [result for result in self.__db[word]]
 
     def index_results(self, word, urls):
-        # TODO make urls a set perhaps, need to only index once per page, not once per time on page
         for url in urls:
             self.__index_result(word, url)
 
     def __index_result(self, word, url):
-        result = self.__db[word]
-
-        for entry in result:
-            if entry["url"] == url:
-                entry["rank"] = entry["rank"] + 1
-                return
-
-        result.append({"url":url, "rank":1})
-
+        if word not in self.__db.keys():
+            self.__db[word] = [{"url":url, "rank": 1}]
+        else:
+            for entry in self.__db[word]:
+                if entry["url"] == url:
+                    entry["rank"] = entry["rank"] + 1
+                    return
+            self.__db[word].append({"url":url,"rank":1})

@@ -34,3 +34,7 @@ class Node():
 
     def search(self, words):
         self.listener.message_handler.search(words)
+
+    def index_words_from_url(self, url, unique_words):
+        for word in set(unique_words):
+            self.message_handler.index(word, url)

@@ -150,8 +150,12 @@ class Message_handler(object):
         if self.__id_is_me(node_id):
             word = message["word"]
             responses = message["response"]
-            search_result = Search_results()
-            search_result.load_results_from_response(word, responses)
+            search_result = Search_results(word, responses)
+            print "RECEIVED RESPONSE FOR " + search_result.word
+            print "Results:"
+            for result in search_result.results:
+                print "Url:\t\t" + str(result["url"])
+                print "Rank:\t\t" + str(result["rank"])
             return search_result
         else:
             self.__forward_message_to_closest_node(message, node_id)
@@ -163,8 +167,6 @@ class Message_handler(object):
             word = message["keyword"]
             urls = message["link"]
 
-            # TODO add indexing code, the following is wrong
-
             self.__db.index_results(word, urls)
         else:
             self.__forward_message_to_closest_node(message, target_id)
@@ -173,6 +175,16 @@ class Message_handler(object):
         message = self.__send_formatter.ack(target_id)
         ip = self.__normalise_ip_to_pair(target_id)
         self.send_message(message, ip)
+
+    def index(self, keyword, link):
+        hash_of_word = self.__encoder.get_hash_of_word(keyword)
+        message = self.__send_formatter.index(hash_of_word, keyword, link)
+        self.__forward_message_to_closest_node(message, hash_of_word)
+
+        loaded = json.loads(message)
+        word = loaded["keyword"]
+        urls = loaded["link"]
+        self.__db.index_results(word, urls)
 
     def __forward_message_to_closest_node(self, message, node_id):
         if type(message) is dict:

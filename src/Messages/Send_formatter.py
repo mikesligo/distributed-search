@@ -57,3 +57,13 @@ class Send_formatter(object):
         message["ip_address"] = str(self.table.node_ip)
         jsoned_msg = json.dumps(message)
         return jsoned_msg
+
+    def index(self, target_id, keyword, link):
+        message = {}
+        message["type"] = "INDEX"
+        message["target_id"] = str(target_id)
+        message["sender_id"] = str(self.table.node_id)
+        message["keyword"] = keyword
+        message["link"] = [link]
+        jsoned_msg = json.dumps(message)
+        return jsoned_msg

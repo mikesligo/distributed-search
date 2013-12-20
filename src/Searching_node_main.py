@@ -13,6 +13,7 @@ def main():
     peer_search.init(Network_utils.get_udp_socket(node_ip.ip, int(node_ip.port)))
     peer_search.join_network(args.bootstrap)
     peer_search.search(["reddit"]) # needs to be a list
+    peer_search.search(["hackernews"]) # needs to be a list
 
 if __name__=='__main__':
     main()

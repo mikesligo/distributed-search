@@ -34,7 +34,8 @@ class Peer_search():
         pass
 
     def index_page(self, url, unique_words):
-        pass
+        self.node.message_handler.setup_lock_event.wait(None)
+        self.node.index_words_from_url(url, unique_words)
 
     def search(self, words):
         self.node.message_handler.setup_lock_event.wait(None)
