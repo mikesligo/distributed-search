@@ -133,7 +133,8 @@ class Message_handler(object):
                 message = self.__send_formatter.search(word, closest_node)
                 ip = self.__normalise_ip_to_pair(closest_node)
                 self.send_message(message, ip)
-            #TODO what if I am the node with the info
+            else:
+                return self.__db.get_results(word)
         #TODO handle pings
 
     def __handle_search(self, message):
