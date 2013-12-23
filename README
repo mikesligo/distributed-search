@@ -6,6 +6,8 @@ Everything works, except I didn't add ping and ack functionality
 
 To test, run Main.py, and Searching_node_main.py
 
+When looking at code, a lot of the core logic can be found in src/Messages/Message_handler.py
+
 NB. Takes an 'ip' parameter as I wanted to multiple instances off a local machine. This ip is of the form ip:port
 
 eg.
