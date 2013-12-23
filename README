@@ -1,3 +1,5 @@
+Submission for Distributed Systems assignment for Michael Gallagher.
+
 Spec: https://www.scss.tcd.ie/~ebarrett/Teaching/CS4032/wiki/index.php?n=Main.P2PWebSearchArchitectureSpecification-Official
 
 Everything works, except I didn't add ping and ack functionality
@@ -6,4 +8,6 @@ To test, run Main.py, and Searching_node_main.py
 
 NB. Takes an 'ip' parameter as I wanted to multiple instances off a local machine. This ip is of the form ip:port
 
-eg. python Main.py --bootstrap 127.0.0.1:8769 --id 1000 --ip 127.0.0.1:8773
+eg.
+python Main.py --boot 12 --ip 127.0.0.1:8767
+python Searching_node_main.py --bootstrap 127.0.0.1:8767 --id 3 --ip 127.0.0.1:8772

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47209205-265a-4041-ab71-24e71018ff20" name="Default" comment="">
+    <list default="true" id="47209205-265a-4041-ab71-24e71018ff20" name="Default" comment="added readme&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/COPYING" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="distributed-search.iws" />
@@ -47,16 +49,25 @@
       <file leaf-file-name="Message_handler.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="25" selection-start="5518" selection-end="5518" vertical-scroll-proportion="0.0" vertical-offset="1755" max-vertical-offset="2970">
+            <state line="137" column="25" selection-start="5518" selection-end="5518" vertical-scroll-proportion="0.0" vertical-offset="2160" max-vertical-offset="2970">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="40" selection-start="232" selection-end="232" vertical-scroll-proportion="0.13921113" vertical-offset="0" max-vertical-offset="431">
+            <state line="0" column="68" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="COPYING" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/COPYING">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="17" selection-start="489" selection-end="489" vertical-scroll-proportion="0.31322506" vertical-offset="0" max-vertical-offset="431">
               <folding />
             </state>
           </provider>
@@ -125,7 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/networking/IP_struct.py" />
         <option value="$PROJECT_DIR$/src/networking/Network_utils.py" />
         <option value="$PROJECT_DIR$/Exceptions/Invalid_IP_exception.py" />
         <option value="$PROJECT_DIR$/Exceptions/Table_lookup_failed_exception.py" />
@@ -141,6 +151,7 @@
         <option value="$PROJECT_DIR$/src/Search/Database.py" />
         <option value="$PROJECT_DIR$/src/Messages/Message_handler.py" />
         <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/COPYING" />
       </list>
     </option>
   </component>
@@ -877,7 +888,11 @@
       <created>1387833540549</created>
       <updated>1387833540549</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="added readme&#10;">
+      <created>1387833554119</created>
+      <updated>1387833554119</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -902,7 +917,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -974,11 +989,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1142" column="0" selection-start="47510" selection-end="47510" vertical-scroll-proportion="0.0" vertical-offset="15991" max-vertical-offset="22080" />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-1247972723/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="591" column="6" selection-start="19942" selection-end="19942" vertical-scroll-proportion="0.3327674" vertical-offset="8669" max-vertical-offset="76485">
@@ -1062,6 +1072,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="68" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="431">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Messages/Message_handler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="137" column="25" selection-start="5518" selection-end="5518" vertical-scroll-proportion="0.0" vertical-offset="1755" max-vertical-offset="2970">
@@ -1069,9 +1086,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
+    <entry file="file://$PROJECT_DIR$/COPYING">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="40" selection-start="232" selection-end="232" vertical-scroll-proportion="0.13921113" vertical-offset="0" max-vertical-offset="431">
+        <state line="9" column="17" selection-start="489" selection-end="489" vertical-scroll-proportion="0.31322506" vertical-offset="0" max-vertical-offset="431">
           <folding />
         </state>
       </provider>
