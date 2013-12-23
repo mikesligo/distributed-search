@@ -1,4 +1,4 @@
-__author__ = 'mike'
+
 
 from Parser import Parser
 from Node import Node

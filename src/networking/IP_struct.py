@@ -1,4 +1,4 @@
-__author__ = 'mike'
+
 
 from Exceptions.Invalid_IP_exception import Invalid_IP_exception
 

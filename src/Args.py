@@ -1,4 +1,4 @@
-__author__ = 'mike'
+
 
 class Args():
     def __init__(self):

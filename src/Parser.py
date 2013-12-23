@@ -1,4 +1,4 @@
-__author__ = 'mike'
+
 
 import argparse
 from Args import Args

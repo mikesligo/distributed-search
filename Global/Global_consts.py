@@ -1,4 +1,4 @@
-__author__ = 'mike'
+
 
 class Global_consts():
 
